@@ -1,13 +1,15 @@
 {
+  "homepage": "https://github.com/av952/weather-react",
   "name": "weather",
-  "private": true,
+  "private": false,
   "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -34,6 +36,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/av952/weather-react/issues"
-  },
-  "homepage": "https://github.com/av952/weather-react#readme"
+  }
+  
 }
