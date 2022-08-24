@@ -1,7 +1,7 @@
 {
   "homepage": "https://github.com/av952/weather-react",
   "name": "weather",
-  "private": false,
+  "private": true,
   "version": "1.0.1",
   "type": "module",
   "scripts": {
