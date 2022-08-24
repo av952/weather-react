@@ -3,11 +3,12 @@ import { WeatherForm } from "./WeatherForm";
 import { WeatherMainInfo } from "./WeatherMainInfo";
 
 import styles from './weatherApp.module.css'
+import { Loading } from "./Loading";
+
 
 export function WeatherApp() {
   const [weather, setWeather] = useState(null);
     
-
   useEffect(()=>{
     loadCity()
   },[])
@@ -20,8 +21,8 @@ export function WeatherApp() {
 
 
   function onChangeCity(city) {
-    setWeather(null);
-    loadCity(city);
+        setWeather(null);
+        loadCity(city);
   }
 
   async function loadCity(city = "London") {
@@ -32,17 +33,17 @@ export function WeatherApp() {
       }&q=${city}&aqi=no
       `);
       const json = await request.json();
-
-      console.log(1, json);
-
-      setWeather(json)
-    } catch (error) {}
+      setTimeout(() => {
+        setWeather(json)
+    }, 1000);
+      
+    } catch (error) {console.log(error)}
   }
 
   return (
     <div className={styles.weatherContainer}>
       <WeatherForm onChangeCity={onChangeCity} />
-      <WeatherMainInfo weather={weather}/>
+       {weather?<WeatherMainInfo weather={weather}/>:<Loading/> }    
     </div>
   );
 }

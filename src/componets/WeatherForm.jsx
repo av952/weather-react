@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styles from './weatherApp.module.css'
 
 
 export const WeatherForm = ({onChangeCity}) => {
     const[city,setCity]= useState( )
+
+    const inputref = useRef()
 
 
     function handler(e) {
@@ -14,10 +16,11 @@ export const WeatherForm = ({onChangeCity}) => {
     function handleSubmit(e) {
         e.preventDefault()
         onChangeCity(city)
+        inputref.current.value =''
     }
     return(
         <form action="" onSubmit={handleSubmit} className={styles.caintainer}>
-            <input type="text" onChange={handler} className={styles.input} />
+            <input ref={inputref} type="text" onChange={handler} className={styles.input} />
         </form>
     )
 }

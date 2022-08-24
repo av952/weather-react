@@ -1,13 +1,13 @@
 {
   "name": "weather",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "dotenv": "^16.0.1",
@@ -20,5 +20,20 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
     "vite": "^3.0.7"
-  }
+  },
+  "description": "Vite     React     Css module     gh-pages",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/av952/weather-react.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "alejo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/av952/weather-react/issues"
+  },
+  "homepage": "https://github.com/av952/weather-react#readme"
 }

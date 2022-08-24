@@ -1,18 +1,28 @@
 import React from 'react'
+import { Loading } from './Loading';
 import styles from './weatherApp.module.css'
 
 export const WeatherMainInfo = ({weather}) => {
 
     console.log(weather?.location.lon);
     console.log(weather?.location.lat);
+
+    function IFrame() {
+        return(
+            <iframe src={`https://maps.google.com/?ll=${weather?.location.lat},${weather?.location.lon}&z=12&t=p&output=embed`} height="350" width='100%' frameBorder="0"  allowFullScreen></iframe>
+        )
+    }
+
+
   return (
     <div className={styles.mainInfo}>
+
         <div className={styles.city} >{weather?.location.name}</div>
         <div className={styles.country}>{weather?.location.country}</div>
 
         <div className={styles.row}>
             <div>
-                <img src={`http:${weather?.current.condition.icon}`} width='128' alt="error" />
+                <img src={`http:${weather?.current.condition.icon}`} width='128' alt={weather?.location.name} />
             </div>
         
 
@@ -22,8 +32,8 @@ export const WeatherMainInfo = ({weather}) => {
         </div>
         </div>
 
-        <iframe src={`https://maps.google.com/?ll=${weather?.location.lat},${weather?.location.lon}&z=12&t=p&output=embed`} height="350" width='100%' frameBorder="0"  allowFullScreen></iframe>
-
+            <IFrame/>
+    
     </div>
   )
 }
