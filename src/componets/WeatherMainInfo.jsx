@@ -3,9 +3,7 @@ import { Loading } from './Loading';
 import styles from './weatherApp.module.css'
 
 export const WeatherMainInfo = ({weather}) => {
-
-    console.log(weather?.location.lon);
-    console.log(weather?.location.lat);
+console.log("🚀 ~ file: WeatherMainInfo.jsx ~ line 6 ~ WeatherMainInfo ~ weather", weather)
 
     function IFrame() {
         return(
